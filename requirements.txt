@@ -1,0 +1,13 @@
+praw
+beautifulsoup4
+nltk
+spacy
+transformers
+streamlit
+mysql-connector-python
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+wordcloud
