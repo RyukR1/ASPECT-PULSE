@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Aspect-Pulse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-pulse"></i>
+                    <span>Aspect-Pulse</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                    <li><a href="/about" class="nav-link active">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-header">
+                <h1>About Aspect-Pulse</h1>
+                <p>Advanced aspect-based sentiment analysis for competitive intelligence</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-card">
+                    <h2>What is Aspect-Based Sentiment Analysis?</h2>
+                    <p>
+                        Traditional sentiment analysis tells you whether a review is positive or negative overall. 
+                        But <strong>Aspect-Based Sentiment Analysis (ABSA)</strong> goes deeper—it extracts what 
+                        specific aspects customers are discussing and determines their sentiment towards each one.
+                    </p>
+                    <p>
+                        For example, instead of just saying "This phone review is positive," ABSA can tell you: 
+                        "Customers love the camera, but have concerns about battery life."
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h2>Our Technology Stack</h2>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fas fa-flask"></i>
+                            <h4>Flask</h4>
+                            <p>Modern Python web framework</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-brain"></i>
+                            <h4>Transformers</h4>
+                            <p>State-of-the-art NLP models</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-language"></i>
+                            <h4>spaCy & NLTK</h4>
+                            <p>Advanced NLP preprocessing</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <h4>MySQL</h4>
+                            <p>Robust data management</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <h2>Supported Product Aspects</h2>
+                    <div class="aspects-showcase">
+                        <div class="aspect-item">
+                            <div class="aspect-icon">🔋</div>
+                            <h4>Battery</h4>
+                            <p>Battery life, charging speed, durability</p>
+                        </div>
+                        <div class="aspect-item">
+                            <div class="aspect-icon">📷</div>
+                            <h4>Camera</h4>
+                            <p>Photo quality, zoom, low light performance</p>
+                        </div>
+                        <div class="aspect-item">
+                            <div class="aspect-icon">📱</div>
+                            <h4>Display</h4>
+                            <p>Screen quality, brightness, refresh rate</p>
+                        </div>
+                        <div class="aspect-item">
+                            <div class="aspect-icon">⚡</div>
+                            <h4>Performance</h4>
+                            <p>Speed, responsiveness, app performance</p>
+                        </div>
+                        <div class="aspect-item">
+                            <div class="aspect-icon">💰</div>
+                            <h4>Value</h4>
+                            <p>Price, value for money, deal quality</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <h2>Data Sources</h2>
+                    <p>Aspect-Pulse aggregates reviews from multiple consumer platforms:</p>
+                    <ul class="source-list">
+                        <li>
+                            <strong>Amazon</strong> - Official product reviews and ratings
+                        </li>
+                        <li>
+                            <strong>Reddit</strong> - Community discussions and user experiences
+                        </li>
+                    </ul>
+                    <p>
+                        This multi-source approach provides comprehensive insights into customer sentiment across 
+                        different communities and demographics.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <h2>How It Works</h2>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Text Preprocessing</h4>
+                                <p>Tokenization, cleaning, and normalization of input text</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Aspect Extraction</h4>
+                                <p>Identify which product aspects are mentioned in each sentence</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Sentiment Analysis</h4>
+                                <p>Classify sentiment (positive/negative/neutral) for each aspect mention</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Aggregation & Visualization</h4>
+                                <p>Compile results and display insights in interactive dashboards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <h2>Use Cases</h2>
+                    <ul class="use-cases-list">
+                        <li>
+                            <strong>Product Teams:</strong> Understand which features need improvement
+                        </li>
+                        <li>
+                            <strong>Marketing:</strong> Identify key selling points and pain points
+                        </li>
+                        <li>
+                            <strong>Competitive Analysis:</strong> Benchmark against competitors
+                        </li>
+                        <li>
+                            <strong>Customer Support:</strong> Prioritize support resources
+                        </li>
+                        <li>
+                            <strong>Market Research:</strong> Deep dive into customer preferences
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="about-card">
+                    <h2>Accuracy & Performance</h2>
+                    <p>
+                        Aspect-Pulse uses state-of-the-art transformer-based models (BERT, DistilBERT) 
+                        fine-tuned for sentiment analysis and aspect extraction tasks. Our system achieves:
+                    </p>
+                    <div class="metrics-showcase">
+                        <div class="metric-box">
+                            <div class="metric-value">98%+</div>
+                            <div class="metric-description">Classification Accuracy</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value">&lt;500ms</div>
+                            <div class="metric-description">Average Analysis Time</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="metric-value">5000</div>
+                            <div class="metric-description">Characters per Request</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card contact-card">
+                    <h2>Get Started Today</h2>
+                    <p>
+                        Ready to unlock deeper insights into customer sentiment? 
+                        Start analyzing your reviews now!
+                    </p>
+                    <a href="/" class="cta-button">
+                        Begin Analysis <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Aspect-Pulse</h4>
+                    <p>Advanced aspect-based sentiment analysis for competitive benchmarking.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aspect-Pulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspect-Pulse | Aspect-Based Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-pulse"></i>
+                    <span>Aspect-Pulse</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link active">Home</a></li>
+                    <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                    <li><a href="/about" class="nav-link">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Aspect-Based Sentiment Analysis</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Uncover detailed customer insights by analyzing specific product aspects from Amazon & Reddit reviews
+                </p>
+                <a href="#analyzer" class="cta-button">
+                    Start Analysis <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
+                    <div class="card-text">Sentiment Analytics</div>
+                </div>
+                <div class="floating-card delay-1">
+                    <div class="card-icon"><i class="fas fa-brain"></i></div>
+                    <div class="card-text">AI-Powered Analysis</div>
+                </div>
+                <div class="floating-card delay-2">
+                    <div class="card-icon"><i class="fas fa-comments"></i></div>
+                    <div class="card-text">Real Reviews</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Aspect-Pulse?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-target"></i>
+                    </div>
+                    <h3>Aspect Extraction</h3>
+                    <p>Extract specific product aspects like Battery, Camera, Display, Performance, and Value from customer reviews.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Advanced NLP</h3>
+                    <p>Powered by transformer-based models for accurate sentiment classification and aspect identification.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Rich Visualizations</h3>
+                    <p>Beautiful charts and dashboards to understand sentiment distribution across different product aspects.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Multi-Source Data</h3>
+                    <p>Aggregate insights from Amazon and Reddit to get comprehensive competitive benchmarking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightning-bolt"></i>
+                    </div>
+                    <h3>Real-Time Analysis</h3>
+                    <p>Instant processing of your text with immediate sentiment and aspect classification results.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Open Architecture</h3>
+                    <p>Built with modern technologies - Flask, Python, NLP transformers for maximum flexibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analyzer Section -->
+    <section class="analyzer" id="analyzer">
+        <div class="container">
+            <h2>Analyze Your Text</h2>
+            <div class="analyzer-wrapper">
+                <div class="input-section">
+                    <textarea 
+                        id="textInput" 
+                        placeholder="Paste your review or comments here... (max 5000 characters)"
+                        class="text-input"
+                    ></textarea>
+                    <div class="input-footer">
+                        <span class="char-count"><span id="charCount">0</span>/5000</span>
+                        <button id="analyzeBtn" class="analyze-button">
+                            <i class="fas fa-zap"></i> Analyze
+                        </button>
+                    </div>
+                </div>
+
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <div class="results-header">
+                        <h3>Analysis Results</h3>
+                        <button class="close-btn" onclick="clearResults()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <div class="summary-cards" id="summaryCards"></div>
+
+                    <div class="results-charts">
+                        <div class="chart-container">
+                            <h4>Overall Sentiment Distribution</h4>
+                            <canvas id="sentimentChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h4>Sentiment by Aspect</h4>
+                            <canvas id="aspectChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="results-table">
+                        <h4>Detailed Results</h4>
+                        <div class="table-wrapper">
+                            <table id="resultsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Sentence</th>
+                                        <th>Aspect</th>
+                                        <th>Sentiment</th>
+                                        <th>Confidence</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resultsBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loading" id="loadingSpinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing your text...</p>
+                </div>
+
+                <div class="error-message" id="errorMessage" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Product Aspects</div>
+                    <div class="stat-description">Battery, Camera, Display, Performance, Value</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Data Sources</div>
+                    <div class="stat-description">Amazon & Reddit Reviews</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Accuracy</div>
+                    <div class="stat-description">Advanced transformer models</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Real-Time</div>
+                    <div class="stat-label">Processing</div>
+                    <div class="stat-description">Instant results</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Aspect-Pulse</h4>
+                    <p>Advanced aspect-based sentiment analysis for competitive benchmarking.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li>Flask</li>
+                        <li>Python NLP</li>
+                        <li>Transformers</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aspect-Pulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

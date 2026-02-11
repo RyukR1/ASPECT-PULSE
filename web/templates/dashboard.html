@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Aspect-Pulse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-pulse"></i>
+                    <span>Aspect-Pulse</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/dashboard" class="nav-link active">Dashboard</a></li>
+                    <li><a href="/about" class="nav-link">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-section">
+        <div class="container">
+            <h1>Analytics Dashboard</h1>
+            <p class="section-subtitle">Track sentiment analysis metrics and insights</p>
+
+            <div class="dashboard-grid">
+                <!-- Key Metrics -->
+                <div class="dashboard-card full-width">
+                    <h3>Key Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <div class="metric-value">0</div>
+                            <div class="metric-label">Total Analyses</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">0</div>
+                            <div class="metric-label">Sentences Analyzed</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">0%</div>
+                            <div class="metric-label">Positive Sentiment</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">0%</div>
+                            <div class="metric-label">Negative Sentiment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overall Sentiment -->
+                <div class="dashboard-card">
+                    <h3>Overall Sentiment Distribution</h3>
+                    <canvas id="overallSentimentChart"></canvas>
+                </div>
+
+                <!-- Top Aspects -->
+                <div class="dashboard-card">
+                    <h3>Top Discussed Aspects</h3>
+                    <div id="topAspectsList" class="aspects-list">
+                        <p class="no-data">No data available yet</p>
+                    </div>
+                </div>
+
+                <!-- Aspect Performance -->
+                <div class="dashboard-card full-width">
+                    <h3>Sentiment by Aspect</h3>
+                    <canvas id="aspectPerformanceChart"></canvas>
+                </div>
+
+                <!-- Recent Analyses -->
+                <div class="dashboard-card full-width">
+                    <h3>Recent Analyses</h3>
+                    <div id="recentAnalysesList" class="analyses-list">
+                        <p class="no-data">No analyses yet. <a href="/">Start analyzing</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Aspect-Pulse</h4>
+                    <p>Advanced aspect-based sentiment analysis for competitive benchmarking.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aspect-Pulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

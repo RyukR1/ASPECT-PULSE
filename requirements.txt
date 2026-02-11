@@ -4,6 +4,7 @@ nltk
 spacy
 transformers
 streamlit
+flask
 mysql-connector-python
 pandas
 numpy
